@@ -4,59 +4,66 @@ import { Icon } from "astro-icon";
 
 const features = [
   {
-    title: "Bring Your Own Framework",
+    title: "Certificación TC6",
     description:
-      "Build your site using React, Svelte, Vue, Preact, web components, or just plain ol' HTML + JavaScript.",
-    icon: "bx:bxs-briefcase",
+      "Garantizamos seguridad y cumplimiento con nuestro servicio de certificación TC6, asegurando que tus instalaciones de gas cumplan con todas las normativas vigentes.",
+    icon: "mdi:gas",
   },
   {
-    title: "100% Static HTML, No JS",
+    title: "Certificación TE1",
     description:
-      "Astro renders your entire page to static HTML, removing all JavaScript from your final build by default.",
-    icon: "bx:bxs-window-alt",
+      "Proporcionamos certificación TE1 para tus instalaciones eléctricas, asegurando que estén en perfecta conformidad con las normas de seguridad actuales.",
+    icon: "mdi:lightning-bolt-outline",
   },
   {
-    title: "On-Demand Components",
+    title: "Diseño de Proyectos",
     description:
-      "Need some JS? Astro can automatically hydrate interactive components when they become visible on the page.  ",
-    icon: "bx:bxs-data",
+      "Creamos diseños de proyectos personalizados que fusionan innovación, funcionalidad y estética, adaptándonos a tus necesidades específicas.",
+    icon: "bx:bx-pencil",
   },
   {
-    title: "Broad Integration",
+    title: "Servicio de Contratista",
     description:
-      "Astro supports TypeScript, Scoped CSS, CSS Modules, Sass, Tailwind, Markdown, MDX, and any other npm packages.",
-    icon: "bx:bxs-bot",
+      "Como contratistas expertos, gestionamos y ejecutamos tu proyecto con eficiencia y precisión, asegurando resultados de la más alta calidad.",
+    icon: "mdi:file-document-edit",
   },
   {
-    title: "SEO Enabled",
+    title: "Inspección Técnica",
     description:
-      "Automatic sitemaps, RSS feeds, pagination and collections take the pain out of SEO and syndication. It just works!",
-    icon: "bx:bxs-file-find",
+      "Nuestras inspecciones técnicas detalladas aseguran que tus instalaciones cumplan con todos los requisitos de seguridad y funcionamiento.",
+    icon: "bx:bx-search-alt",
   },
   {
-    title: "Community",
+    title: "Planimetría",
     description:
-      "Astro is an open source project powered by hundreds of contributors making thousands of individual contributions.",
-    icon: "bx:bxs-user",
+      "Elaboramos planimetrías precisas que sirven como la base detallada para proyectos de construcción y remodelación exitosos.",
+    icon: "bx:bx-map",
+  },
+  {
+    title: "Resoluciones Sanitarias",
+    description:
+      "Nos especializamos en obtener resoluciones sanitarias, asegurando que tus proyectos de agua potable y alcantarillado cumplan con las regulaciones de la seremi de salud.",
+    icon: "bx:bx-shield",
   },
 ];
 ---
 
 <div class="mt-16 md:mt-0">
   <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">
-    Everything you need to start a website
+    Servicios de Ingeniería
   </h2>
   <p class="text-lg mt-4 text-slate-600">
-    Astro comes batteries included. It takes the best parts of state-of-the-art
-    tools and adds its own innovations.
+    Llevamos tus <span class="italic text-purple-800">ideas</span> a la <span
+      class="font-bold text-amber-600">realidad</span
+    >, creando soluciones personalizadas y efectivas
   </p>
 </div>
 
 <div class="grid sm:grid-cols-2 md:grid-cols-3 mt-16 gap-16">
   {
     features.map((item) => (
-      <div class="flex gap-4 items-start">
-        <div class="mt-1 bg-black rounded-full  p-2 w-8 h-8 shrink-0">
+      <div class="group/item flex gap-4 items-start">
+        <div class="mt-1 bg-purple-950 rounded-full  p-2 w-10 h-10 shrink-0 group-hover/item:bg-amber-600">
           <Icon class="text-white" name={item.icon} />
         </div>
         <div>
