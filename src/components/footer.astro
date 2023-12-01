@@ -1,4 +1,23 @@
+---
+import { Icon } from "astro-icon";
+import Link from "./ui/link.astro";
+---
+
 <footer class="my-20">
+  <div class="flex justify-center mb-2 gap-2">
+    <a
+      href="https://wa.me/56932101930?text=Hola,%20me%20gustar%C3%ADa%20cotizar"
+      class="text-slate-500 hover:text-slate-900">
+      <Icon class="w-6 h-6" name="bi:whatsapp" />
+  </a>
+    <a
+      href="https://www.instagram.com/egxingenieria/"
+      class="text-slate-500 hover:text-slate-900"
+      target="_blank">
+      <Icon class="w-6 h-6" name="bi:instagram" />
+  </a>
+  </div>
+
   <p class="text-center text-sm text-slate-500">
     Copyright © {new Date().getFullYear()} EGX Ingeniería. Todos los derechos reservados.
   </p>

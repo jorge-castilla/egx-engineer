@@ -37,28 +37,15 @@ import { Icon } from "astro-icon";
         planificación</span
       > hasta la <span class="text-amber-600 font-bold"> ejecución</span>.
     </p>
-    <div class="mt-6 flex flex-col sm:flex-row gap-3">
+    <div class="mt-6 flex flex-col sm:flex-row">
       <Link
         href="/servicios"
-        class="flex gap-1 items-center justify-center bg-purple-600 hover:bg-purple-500"
+        class="flex items-center justify-center bg-purple-600 hover:bg-purple-500"
         rel="noopener">
-        <Icon class="text-white w-5 h-5" name="icomoon-free:price-tags" />
-        Ver Precios
-      </Link>
-      <Link
-        size="lg"
-        style="outline"
-        rel="noopener"
-        href="/contacto"
-        class="flex gap-1 items-center justify-center border-amber-600 hover:bg-amber-50 ">
-        <Icon
-          class="text-amber-600 w-4 h-4"
-          name="icon-park-outline:message"
-        />
-        <span class="text-amber-600 ">
+        <Icon class="text-white w-6 h-6" name="icon-park-outline:message" />
+        <div class="px-3">
           Contáctanos
-
-        </span>
+        </div>
       </Link>
     </div>
   </div>
