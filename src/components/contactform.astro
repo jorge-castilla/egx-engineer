@@ -13,7 +13,7 @@ import Button from "./ui/button.astro";
   <input
     type="hidden"
     name="access_key"
-    value="19a88c4d-8e6c-4513-9157-3aad988bf081"
+    value={import.meta.env.EMAIL_API_KEY}
   />
   <!-- Create your free access key from https://web3forms.com/ -->
   <input type="checkbox" class="hidden" style="display:none" name="botcheck" />
