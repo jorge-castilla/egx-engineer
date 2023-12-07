@@ -12,6 +12,7 @@ const workWithUsCard = {
   src: workWithUsImage.src,
   buttonName: "Contactar",
   link: "/contacto",
+  ariaLabel: "Trabaja con nosotros",
 };
 
 const clientsCard = {
@@ -21,6 +22,7 @@ const clientsCard = {
   src: clientsImage.src,
   buttonName: "Ver más",
   link: "/clientes",
+  ariaLabel: "Nuestros clientes",
 };
 
 const aboutUs = {
@@ -30,6 +32,7 @@ const aboutUs = {
   src: aboutUsImage.src,
   buttonName: "Conócenos",
   link: "/quienes-somos",
+  ariaLabel: "Sobre nosotros",
 };
 ---
 
@@ -42,6 +45,7 @@ const aboutUs = {
       src={workWithUsCard.src}
       buttonName={workWithUsCard.buttonName}
       link={workWithUsCard.link}
+      ariaLabel={workWithUsCard.ariaLabel}
     />
     <Card
       title={clientsCard.title}
@@ -49,6 +53,7 @@ const aboutUs = {
       src={clientsCard.src}
       buttonName={clientsCard.buttonName}
       link={clientsCard.link}
+      ariaLabel={clientsCard.ariaLabel}
     />
     <Card
       title={aboutUs.title}
@@ -56,6 +61,7 @@ const aboutUs = {
       src={aboutUs.src}
       buttonName={aboutUs.buttonName}
       link={aboutUs.link}
+      ariaLabel={aboutUs.ariaLabel}
     />
   </div>
 </section>

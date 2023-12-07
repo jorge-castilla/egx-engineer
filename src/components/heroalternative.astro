@@ -1,7 +1,7 @@
 <section
-  class="bg-center bg-no-repeat bg-[url('/public/hero.jpg')] bg-gray-700 bg-blend-multiply height-screen">
+  class="bg-center bg-no-repeat bg-[url('/hero.jpg')] bg-gray-700 bg-blend-multiply py-48 ">
   <div
-    class="px-4 mx-auto max-w-screen-xl text-center flex justify-center align-center flex-col height-screen">
+    class="px-4 mx-auto max-w-screen-xl text-center flex justify-center align-center flex-col">
     <h1
       class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-white md:text-5xl lg:text-6xl">
       Realizamos proyectos de especialidades
@@ -20,7 +20,8 @@
       class="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0">
       <a
         href="/contacto"
-        class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300">
+        aria-label="Contactar"
+        class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 transition">
         Contáctanos
         <svg
           class="w-3.5 h-3.5 ms-2 rtl:rotate-180"
@@ -38,7 +39,8 @@
       </a>
       <a
         href="/servicios"
-        class="inline-flex justify-center hover:text-gray-900 items-center py-3 px-5 sm:ms-4 text-base font-medium text-center text-white rounded-lg border border-white hover:bg-gray-100 focus:ring-4 focus:ring-gray-400">
+        aria-label="Ir a servicios"
+        class="inline-flex justify-center hover:text-gray-900 items-center py-3 px-5 sm:ms-4 text-base font-medium text-center text-white rounded-lg border border-white hover:bg-gray-100 focus:ring-4 focus:ring-gray-400 transition">
         Ver Servicios
       </a>
     </div>
@@ -46,7 +48,4 @@
 </section>
 
 <style scoped>
-  .height-screen {
-    min-height: calc(100vh - 80px);
-  }
 </style>
