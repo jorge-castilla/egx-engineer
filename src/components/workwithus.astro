@@ -1,0 +1,61 @@
+---
+import Card from "./ui/card.astro";
+import heroImage from "assets/hero.jpg";
+import workWithUsImage from "assets/work-with-us.jpg";
+import clientsImage from "assets/clients.jpg";
+import aboutUsImage from "assets/about-us.jpg";
+
+const workWithUsCard = {
+  title: "Trabaja con nosotros",
+  content:
+    "Si tienes productos para ofrecernos o quieres trabajar con nosotros, no dudes en contactarnos.",
+  src: workWithUsImage.src,
+  buttonName: "Contactar",
+  link: "/contacto",
+};
+
+const clientsCard = {
+  title: "Nuestros clientes",
+  content:
+    "Trabajamos con compañías y particulares. Nuestros clientes son nuestra mejor garantía.",
+  src: clientsImage.src,
+  buttonName: "Ver más",
+  link: "/clientes",
+};
+
+const aboutUs = {
+  title: "Sobre nosotros",
+  content:
+    "Contamos con una amplia experiencia en el sector, ofreciendo servicios de calidad y con garantía.",
+  src: aboutUsImage.src,
+  buttonName: "Conócenos",
+  link: "/quienes-somos",
+};
+---
+
+<section class="bg-white mt-20">
+  <div
+    class="mx-auto max-w-screen-xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16 place-items-center grid grid-cols-1 lg:grid-cols-3 gap-8">
+    <Card
+      title={workWithUsCard.title}
+      content={workWithUsCard.content}
+      src={workWithUsCard.src}
+      buttonName={workWithUsCard.buttonName}
+      link={workWithUsCard.link}
+    />
+    <Card
+      title={clientsCard.title}
+      content={clientsCard.content}
+      src={clientsCard.src}
+      buttonName={clientsCard.buttonName}
+      link={clientsCard.link}
+    />
+    <Card
+      title={aboutUs.title}
+      content={aboutUs.content}
+      src={aboutUs.src}
+      buttonName={aboutUs.buttonName}
+      link={aboutUs.link}
+    />
+  </div>
+</section>

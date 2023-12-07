@@ -3,6 +3,7 @@ import Container from "@components/container.astro";
 import Link from "@components/ui/link.astro";
 import Dropdown from "./dropdown.astro";
 import { Astronav, MenuItems, MenuIcon } from "astro-navbar";
+import { Picture } from "@astrojs/image/components";
 
 const menuitems = [
   {
@@ -10,8 +11,12 @@ const menuitems = [
     path: "/",
   },
   {
-    title: "Nosotros",
-    path: "/empresa",
+    title: "Quiénes somos",
+    path: "/quienes-somos",
+  },
+  {
+    title: "Clientes",
+    path: "/clientes",
   },
   {
     title: "Servicios",
@@ -29,13 +34,18 @@ const menuitems = [
   <header class="flex flex-col lg:flex-row justify-between items-center my-5">
     <Astronav>
       <div class="flex w-full lg:w-auto items-center justify-between">
-        <a href="/" class="text-lg">
-          <img
-            src="/logo.png"
-            alt=""
-            class="inline-block mr-1"
-            style="max-width: 40px;"
-          />
+        <a href="/" class="text-lg flex items-center gap-2">
+          <div class="w-12">
+            <Picture
+              src="/logo.png"
+              alt="Logo EGX"
+              widths={[48]}
+              aspectRatio="48:60"
+              sizes="48px"
+              loading="eager"
+              format="avif"
+            />
+          </div>
           <span class="font-bold text-slate-800">EGX</span>
           <span class="text-slate-500">Ingeniería</span>
         </a>
