@@ -1,38 +1,44 @@
 ---
-const { title, content, src, buttonName, link, ariaLabel } = Astro.props;
+const { title, preTitle, content, src, buttonName, link, ariaLabel } =
+  Astro.props;
 ---
 
-<div class="bg-white border border-gray-200 rounded-lg shadow max-w-md">
-  <a href={link}>
-    <img class="rounded-t-lg" src={src} alt="" />
-  </a>
-  <div class="p-5">
-    <a href={link} aria-label={ariaLabel}>
-      <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">
-        {title}
-      </h5>
-    </a>
-    <p class="mb-3 font-normal text-gray-700">
+<div
+  class="relative flex bg-clip-border rounded-xl bg-white text-gray-700 shadow-md w-full max-w-[48rem] flex-row">
+  <div
+    class="relative w-2/5 m-0 overflow-hidden text-gray-700 bg-white rounded-r-none bg-clip-border rounded-xl shrink-0">
+    <img src={src} alt="card-image" class="object-cover w-full h-full" />
+  </div>
+  <div class="p-6">
+    <h6
+      class="block mb-4 font-sans text-base antialiased font-semibold leading-relaxed tracking-normal text-gray-700 uppercase">
+      {preTitle}
+    </h6>
+    <h4
+      class="block mb-2 font-sans text-2xl antialiased font-semibold leading-snug tracking-normal text-blue-gray-900">
+      {title}
+    </h4>
+    <p
+      class="block mb-8 font-sans text-base antialiased font-normal leading-relaxed text-gray-700">
       {content}
     </p>
-    <a
-      href={link}
-      aria-label={ariaLabel}
-      class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-purple-600 rounded-lg hover:bg-purple-500 focus:ring-4 focus:outline-none focus:ring-purple-300">
-      {buttonName}
-      <svg
-        class="rtl:rotate-180 w-3.5 h-3.5 ms-2"
-        aria-hidden="true"
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 14 10">
-        <path
+    <a href={link} class="inline-block" aria-label={ariaLabel}
+      ><button
+        class="flex items-center gap-2 px-6 py-3 font-sans text-xs font-bold text-center text-gray-900 uppercase align-middle transition-all rounded-lg select-none disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none hover:bg-gray-900/10 active:bg-gray-900/20"
+        type="button">
+        {buttonName}<svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
           stroke="currentColor"
-          stroke-linecap="round"
-          stroke-linejoin="round"
           stroke-width="2"
-          d="M1 5h12m0 0L9 1m4 4L9 9"></path>
-      </svg>
-    </a>
+          class="w-4 h-4">
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"></path>
+        </svg></button
+      ></a
+    >
   </div>
 </div>

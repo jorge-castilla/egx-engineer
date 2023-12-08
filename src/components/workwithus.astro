@@ -7,6 +7,7 @@ import aboutUsImage from "assets/about-us.jpg";
 
 const workWithUsCard = {
   title: "Trabaja con nosotros",
+  preTitle: '',
   content:
     "Si tienes productos para ofrecernos o quieres trabajar con nosotros, no dudes en contactarnos.",
   src: workWithUsImage.src,
@@ -38,7 +39,7 @@ const aboutUs = {
 
 <section class="bg-white mt-20">
   <div
-    class="mx-auto max-w-screen-xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16 place-items-center grid grid-cols-1 lg:grid-cols-3 gap-8">
+    class="mx-auto max-w-screen-xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16 place-items-center grid grid-cols-1 gap-8">
     <Card
       title={workWithUsCard.title}
       content={workWithUsCard.content}
@@ -46,22 +47,7 @@ const aboutUs = {
       buttonName={workWithUsCard.buttonName}
       link={workWithUsCard.link}
       ariaLabel={workWithUsCard.ariaLabel}
-    />
-    <Card
-      title={clientsCard.title}
-      content={clientsCard.content}
-      src={clientsCard.src}
-      buttonName={clientsCard.buttonName}
-      link={clientsCard.link}
-      ariaLabel={clientsCard.ariaLabel}
-    />
-    <Card
-      title={aboutUs.title}
-      content={aboutUs.content}
-      src={aboutUs.src}
-      buttonName={aboutUs.buttonName}
-      link={aboutUs.link}
-      ariaLabel={aboutUs.ariaLabel}
+      preTitle={workWithUsCard.preTitle}
     />
   </div>
 </section>
