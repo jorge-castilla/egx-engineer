@@ -3,7 +3,7 @@ import Container from "@components/container.astro";
 import Link from "@components/ui/link.astro";
 import Dropdown from "./dropdown.astro";
 import { Astronav, MenuItems, MenuIcon } from "astro-navbar";
-import { Picture } from "@astrojs/image/components";
+import { Image } from "astro:assets";
 
 const menuitems = [
   {
@@ -15,12 +15,12 @@ const menuitems = [
     path: "/quienes-somos",
   },
   {
-    title: "Clientes",
-    path: "/clientes",
-  },
-  {
     title: "Servicios",
     path: "/servicios",
+  },
+  {
+    title: "Proyectos",
+    path: "/proyectos",
   },
   {
     title: "Contacto",
@@ -28,6 +28,9 @@ const menuitems = [
     isContact: true,
   },
 ];
+
+const pathname = new URL(Astro.request.url).pathname;
+const currentPath = pathname;
 ---
 
 <Container>
@@ -36,12 +39,11 @@ const menuitems = [
       <div class="flex w-full lg:w-auto items-center justify-between">
         <a href="/" class="text-lg flex items-center gap-2">
           <div class="w-12">
-            <Picture
+            <Image
               src="/logo.png"
               alt="Logo EGX"
-              widths={[48]}
-              aspectRatio="48:60"
-              sizes="48px"
+              width="48"
+              height="48"
               loading="eager"
               format="avif"
             />
@@ -62,7 +64,12 @@ const menuitems = [
                   {!item.isContact && (
                     <a
                       href={item.path}
-                      class="flex lg:px-3 py-2 items-center text-gray-600 hover:text-gray-900">
+                      class="flex lg:px-3 py-2 items-center text-gray-500 hover:text-gray-900 underline hover:decoration-purple-600 underline-offset-4 decoration-2 transition-all duration-200 "
+                      class:list={
+                        currentPath === item.path
+                          ? "decoration-purple-400"
+                          : "decoration-white"
+                      }>
                       <span> {item.title}</span>
                     </a>
                   )}

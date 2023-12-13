@@ -1,16 +1,30 @@
 ---
-// @ts-ignore
-import { Icon } from "astro-icon";
+import { Image } from "astro:assets";
+import nehuenLogo from "@assets/logos/nehuen-logo.png";
+import canelosLogo from "@assets/logos/4canelos-logo.png";
 ---
 
 <div class="mt-24">
-  <h2 class="text-center text-slate-500">Works with your technologies</h2>
-  <div class="flex gap-8 md:gap-20 items-center justify-center mt-10 flex-wrap">
-    <Icon class="h-8 md:h-12" name="simple-icons:react" />
-    <Icon class="h-8 md:h-12" name="simple-icons:svelte" />
-    <Icon class="h-8 md:h-14" name="simple-icons:tailwindcss" />
-    <Icon class="h-8 md:h-16" name="simple-icons:alpinedotjs" />
-    <Icon class="h-8 md:h-12" name="simple-icons:vercel" />
-    <Icon class="h-8 md:h-12" name="simple-icons:astro" />
+  <h2 class="text-center text-slate-700 text-xl font-bold">
+    Nuestros Clientes
+  </h2>
+  <div
+    class="flex gap-20 md:gap-32 items-center justify-center mt-10 flex-wrap">
+    <Image
+      src={canelosLogo}
+      alt="Empresas Nehuen Logo"
+      width={96}
+      class="filter grayscale hover:filter-none transition-all duration-500 ease-in-out"
+    />
+    <Image
+      src={nehuenLogo}
+      alt="Empresas Nehuen Logo"
+      width={96}
+      class="filter grayscale hover:filter-none transition-all duration-500 ease-in-out"
+    />
+    <div
+      class="text-xl hover:text-green-700 transition-all duration-500 ease-in-out">
+      <span class="font-bold">Licancabur</span> spa
+    </div>
   </div>
 </div>
