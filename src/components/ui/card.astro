@@ -4,9 +4,9 @@ const { title, preTitle, content, src, buttonName, link, ariaLabel } =
 ---
 
 <div
-  class="relative flex bg-clip-border rounded-xl bg-white text-gray-700 shadow-md w-full max-w-[48rem] flex-row">
+  class="relative flex bg-clip-border rounded-xl text-gray-700 shadow-md w-full max-w-[48rem] flex-row dark:text-white dark:bg-purple-950">
   <div
-    class="relative w-2/5 m-0 overflow-hidden text-gray-700 bg-white rounded-r-none bg-clip-border rounded-xl shrink-0">
+    class="relative w-2/5 m-0 overflow-hidden text-gray-700 rounded-r-none bg-clip-border rounded-xl shrink-0 dark:text-white">
     <img
       src={src}
       alt="Gente trabajando en equipo"
@@ -15,20 +15,20 @@ const { title, preTitle, content, src, buttonName, link, ariaLabel } =
   </div>
   <div class="p-6">
     <h6
-      class="block mb-4 font-sans text-base antialiased font-semibold leading-relaxed tracking-normal text-gray-700 uppercase">
+      class="block mb-4 font-sans text-base antialiased font-semibold leading-relaxed tracking-normal text-gray-700 uppercase dark:text-white">
       {preTitle}
     </h6>
     <h4
-      class="block mb-2 font-sans text-2xl antialiased font-semibold leading-snug tracking-normal text-blue-gray-900">
+      class="block mb-2 font-sans text-2xl antialiased font-semibold leading-snug tracking-normal text-blue-gray-900 dark:text-white">
       {title}
     </h4>
     <p
-      class="block mb-8 font-sans text-base antialiased font-normal leading-relaxed text-gray-700">
+      class="block mb-8 font-sans text-base antialiased font-normal leading-relaxed text-gray-700 dark:text-gray-300">
       {content}
     </p>
     <a href={link} class="inline-block" aria-label={ariaLabel}
       ><button
-        class="flex items-center gap-2 px-6 py-3 font-sans text-xs font-bold text-center text-gray-900 uppercase align-middle transition-all rounded-lg select-none disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none hover:bg-gray-900/10 active:bg-gray-900/20"
+        class="flex items-center gap-2 px-6 py-3 font-sans text-xs font-bold text-center text-gray-900 uppercase align-middle transition-all rounded-lg select-none disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none hover:bg-gray-900/10 active:bg-gray-900/20 dark:text-white dark:bg-purple-500 dark:hover:bg-purple-400 dark:active:bg-purple-400"
         type="button">
         {buttonName}<svg
           xmlns="http://www.w3.org/2000/svg"

@@ -1,0 +1,186 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/container.astro";
+import Button from "@components/ui/button.astro";
+import { Icon } from "astro-icon";
+---
+
+<Layout title="Colaboremos">
+  <section
+    class="bg-center bg-cover bg-[url('/contacto-colaborar.jpg')] bg-gray-700 bg-blend-multiply py-48 relative mb-96">
+    <div class="container mx-auto absolute top-24 left-1/2 -translate-x-1/2">
+      <div
+        class="max-w-3xl mx-auto my-10 bg-white p-5 rounded-md shadow-sm dark:bg-[#080808] rounded-md">
+        <div class="text-center">
+          <h1
+            class="my-3 text-3xl font-semibold text-gray-700 dark:text-gray-200">
+            Trabaja con Nosotros
+          </h1>
+          <p class="text-gray-400 dark:text-gray-400">
+            Envíanos tu CV o datos de tu empresa y nos pondremos en contacto
+            contigo.
+          </p>
+        </div>
+        <div class="m-7">
+          <form
+            action="https://api.web3forms.com/submit"
+            method="POST"
+            id="form">
+            <input
+              type="hidden"
+              name="subject"
+              value="New Submission from Web3Forms"
+            />
+            <input
+              type="checkbox"
+              name="botcheck"
+              id=""
+              style="display: none;"
+            />
+
+            <div class="flex mb-6 space-x-4">
+              <div class="w-full md:w-1/2">
+                <label
+                  for="fname"
+                  class="block mb-2 text-sm text-gray-600 dark:text-gray-200"
+                  >Nombre</label
+                >
+                <input
+                  type="text"
+                  name="name"
+                  id="first_name"
+                  placeholder="John"
+                  required
+                  class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:text-black dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500"
+                />
+              </div>
+              <div class="w-full md:w-1/2">
+                <label
+                  for="lname"
+                  class="block mb-2 text-sm text-gray-600 dark:text-gray-400"
+                  >Empresa</label
+                >
+                <input
+                  type="text"
+                  name="last_name"
+                  id="lname"
+                  placeholder="Doe"
+                  required
+                  class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:text-black dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500"
+                />
+              </div>
+            </div>
+
+            <div class="flex mb-6 space-x-4">
+              <div class="w-full md:w-1/2">
+                <label
+                  for="email"
+                  class="block mb-2 text-sm text-gray-600 dark:text-gray-400"
+                  >Correo electrónico</label
+                >
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  placeholder="tu@empresa.com"
+                  required
+                  class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:text-black dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500"
+                />
+              </div>
+
+              <div class="w-full md:w-1/2">
+                <label
+                  for="phone"
+                  class="block text-sm mb-2 text-gray-600 dark:text-gray-400"
+                  >Teléfono</label
+                >
+                <input
+                  type="text"
+                  name="phone"
+                  id="phone"
+                  placeholder="+56 9 1234 5678"
+                  required
+                  class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:text-black dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500"
+                />
+              </div>
+            </div>
+
+            <div class="mb-6">
+              <label
+                for="message"
+                class="block mb-2 text-sm text-gray-600 dark:text-gray-400"
+                >Subir documento (.pdf o .docx. Menos de 1 MB)</label
+              >
+              <input
+                type="file"
+                id="attachment"
+                name="attachment"
+                accept="application/pdf,.doc,.docx"
+                required
+              />
+            </div>
+            <div class="mb-6">
+              <button
+                type="submit"
+                class="w-full px-3 py-4 text-white bg-purple-600 rounded-md focus:bg-purple-700 focus:outline-none">
+                Enviar
+              </button>
+            </div>
+            <p class="text-base text-center text-gray-400" id="result"></p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+<Container />
+
+<script is:inline>
+  const form = document.getElementById("form");
+  const result = document.getElementById("result");
+
+  form.addEventListener("submit", function (e) {
+    const formData = new FormData(form);
+    e.preventDefault();
+    formData.append("apikey", import.meta.env.EMAIL_API_KEY);
+
+    const file = document.getElementById("attachment");
+    const filesize = file.files[0].size / 1024;
+
+    if (filesize > 1000) {
+      alert("Sube un archivo de menos de 1 MB");
+      return;
+    }
+
+    result.innerHTML = "Enviando...";
+
+    fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData,
+    })
+      .then(async (response) => {
+        let json = await response.json();
+        if (response.status == 200) {
+          result.innerHTML =
+            "Gracias por contactarnos. Nos pondremos en contacto contigo pronto.";
+          result.classList.remove("text-gray-500");
+          result.classList.add("text-green-500");
+        } else {
+          console.log(response);
+          result.innerHTML = "Algo salió mal. Inténtalo de nuevo.";
+          result.classList.remove("text-gray-500");
+          result.classList.add("text-red-500");
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+        result.innerHTML = "Algo salió mal. Inténtalo de nuevo.";
+      })
+      .then(function () {
+        form.reset();
+        setTimeout(() => {
+          result.style.display = "none";
+        }, 5000);
+      });
+  });
+</script>

@@ -4,6 +4,7 @@ import Link from "@components/ui/link.astro";
 import Dropdown from "./dropdown.astro";
 import { Astronav, MenuItems, MenuIcon } from "astro-navbar";
 import { Image } from "astro:assets";
+import ThemeIcon from "@components/themeicon.astro";
 
 const menuitems = [
   {
@@ -21,6 +22,10 @@ const menuitems = [
   {
     title: "Proyectos",
     path: "/proyectos",
+  },
+  {
+    title: "Clientes",
+    path: "/clientes",
   },
   {
     title: "Contacto",
@@ -48,8 +53,8 @@ const currentPath = pathname;
               format="avif"
             />
           </div>
-          <span class="font-bold text-slate-800">EGX</span>
-          <span class="text-slate-500">Ingeniería</span>
+          <span class="font-bold text-slate-800 dark:text-white">EGX</span>
+          <span class="text-slate-500 dark:text-gray-400">Ingeniería</span>
         </a>
         <div class="block lg:hidden">
           <MenuIcon class="w-4 h-4 text-gray-800" />
@@ -64,11 +69,11 @@ const currentPath = pathname;
                   {!item.isContact && (
                     <a
                       href={item.path}
-                      class="flex lg:px-3 py-2 items-center text-gray-500 hover:text-gray-900 underline hover:decoration-purple-600 underline-offset-4 decoration-2 transition-all duration-200 "
+                      class="flex lg:px-3 py-2 items-center text-gray-500 hover:text-gray-900 underline hover:decoration-purple-600 underline-offset-4 decoration-2 transition-all duration-200 dark:text-gray-100 hover:dark:text-white"
                       class:list={
                         currentPath === item.path
                           ? "decoration-purple-400"
-                          : "decoration-white"
+                          : "decoration-transparent"
                       }>
                       <span> {item.title}</span>
                     </a>
@@ -84,6 +89,7 @@ const currentPath = pathname;
               </>
             ))
           }
+          <ThemeIcon />
         </ul>
       </MenuItems>
     </Astronav>

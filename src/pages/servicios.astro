@@ -6,59 +6,33 @@ import PricingCard from "@components/pricing.astro";
 
 const pricing = [
   {
-    name: "Personal",
-    price: "Free",
+    name: "Certificación",
+    price: "TC6",
     popular: false,
-    features: [
-      "Lifetime free",
-      "Up to 3 users",
-      "Unlimited Pages",
-      "Astro Sub domain",
-      "Basic Integrations",
-      "Community Support",
-    ],
+    features: ["Normativas vigentes", "Certificación"],
     button: {
-      text: "Get Started",
-      link: "/",
+      text: "Ver Más",
+      link: "/contacto",
     },
   },
   {
-    name: "Startup",
-    price: {
-      monthly: "$19",
-      annual: "$16",
-      discount: "10%",
-      original: "$24",
-    },
+    name: "Proyectos",
+    price: "Planimetrías",
     popular: true,
-    features: [
-      "All Free Features",
-      "Up to 20 users",
-      "20 Custom domains",
-      "Unlimited Collaborators",
-      "Advanced Integrations",
-      "Priority Support",
-    ],
+    features: ["A todo Chile", "Planos", "Memoría de Cálculo", "EE.TT."],
     button: {
-      text: "Get Started",
-      link: "#",
+      text: "Planificar",
+      link: "/contacto",
     },
   },
   {
-    name: "Enterprise",
-    price: "Custom",
+    name: "Instalaciones",
+    price: "TE1",
     popular: false,
-    features: [
-      "All Pro Features",
-      "Unlimited Custom domains",
-      "99.99% Uptime SLA",
-      "SAML & SSO Integration",
-      "Dedicated Account Manager",
-      "24/7 Phone Support",
-    ],
+    features: ["Estándares SEC", "Seguridad"],
     button: {
-      text: "Contact us",
-      link: "/contact",
+      text: "Ver Más",
+      link: "/contacto",
     },
   },
 ];
@@ -68,13 +42,19 @@ const pricing = [
   <Container>
     <Sectionhead>
       <Fragment slot="title">Servicios</Fragment>
-      <Fragment slot="desc">
-        Precios simples y predecibles. Sin sorpresas.
-      </Fragment>
+      <Fragment slot="desc"></Fragment>
     </Sectionhead>
 
     <div class="grid md:grid-cols-3 gap-10 mx-auto max-w-screen-lg mt-12">
       {pricing.map((item) => <PricingCard plan={item} />)}
+    </div>
+
+    <div class="text-center text-xl mt-10 max-w-3xl mx-auto">
+      Si deseas saber acerca del resto de nuestros servicios llena nuestro <a
+        href="/contacto"
+        class="underline underline-offset-2 decoration-purple-700"
+        >formulario de contacto</a
+      > y te responderemos a la brevedad.
     </div>
   </Container>
 </Layout>
