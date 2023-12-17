@@ -4,9 +4,6 @@ import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://egx-engineer.vercel.app",
-  integrations: [
-    tailwind(),
-    sitemap(),
-  ],
+  site: "https://www.egxingenieria.cl",
+  integrations: [tailwind(), sitemap()],
 });
