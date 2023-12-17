@@ -1,10 +1,10 @@
 ---
 import { getCollection } from "astro:content";
-
+import { Image } from "astro:assets";
 import Layout from "@layouts/Layout.astro";
 import Container from "@components/container.astro";
 import Sectionhead from "@components/sectionhead.astro";
-
+import Button from "@components/ui/button.astro";
 // Filter blog entries with 'draft: false' & date before current date
 const publishedBlogEntries = await getCollection("blog", ({ data }) => {
   return !data.draft && data.publishDate < new Date();
@@ -19,37 +19,47 @@ publishedBlogEntries.sort(function (a, b) {
 <Layout title="Blog">
   <Container>
     <Sectionhead>
-      <Fragment slot="title">Our Blog</Fragment>
-      <Fragment slot="desc">
-        We write about building startups and thoughts going on our mind.
-      </Fragment>
+      <Fragment slot="title">Nuestro Blog</Fragment>
+      <Fragment slot="desc"></Fragment>
     </Sectionhead>
     <main class="mt-16">
-      <ul class="grid gap-16 max-w-4xl mx-auto">
+      <ul class="grid gap-16 ml-auto max-w-4xl xl:mr-20">
         {
           publishedBlogEntries.map((blogPostEntry, index) => (
-            <li>
+            <li class="xl:max-w-5xl max-w-4xl">
               <a href={`/blog/${blogPostEntry.slug}`}>
-                <div class="grid md:grid-cols-2 gap-5 md:gap-10 items-center">
+                <div class="grid gap-5 md:gap-10 items-center">
                   <div>
                     <span class="text-blue-400 uppercase tracking-wider text-sm font-medium">
                       {blogPostEntry.data.category}
                     </span>
-
                     <h2 class="text-3xl font-semibold leading-snug tracking-tight mt-1 ">
                       {blogPostEntry.data.title}
                     </h2>
-
-                    <div class="flex gap-2 mt-3">
-                      <span class="text-gray-400">
-                        {blogPostEntry.data.author}
-                      </span>
-                      <span class="text-gray-400">• </span>
-                      <time
-                        class="text-gray-400"
-                        datetime={blogPostEntry.data.publishDate.toISOString()}>
-                        {blogPostEntry.data.publishDate.toDateString()}
-                      </time>
+                    <hr class="h-px my-2 bg-gray-200 border-0 dark:bg-gray-700" />
+                    <time
+                      class="text-gray-400"
+                      datetime={blogPostEntry.data.publishDate.toISOString()}>
+                      {new Intl.DateTimeFormat("es-CL", {
+                        dateStyle: "full",
+                      }).format(new Date(blogPostEntry.data.publishDate))}
+                    </time>
+                    <div class="flex mb-6" />
+                    <Image
+                      class="mt-4"
+                      src={blogPostEntry.data.image.src}
+                      alt={blogPostEntry.data.image.alt}
+                      width="900"
+                      height="400"
+                      loading="lazy"
+                      format="avif"
+                    />
+                    <div class="flex justify-end items-center py-2">
+                      <div>
+                        <Button type="submit" style="primary" size="md" block>
+                          Ver Más
+                        </Button>
+                      </div>
                     </div>
                   </div>
                 </div>

@@ -10,15 +10,15 @@ import { Icon } from "astro-icon";
     class="bg-center bg-cover bg-[url('/contacto-colaborar.jpg')] bg-gray-700 bg-blend-multiply py-48 relative mb-96">
     <div class="container mx-auto absolute top-24 left-1/2 -translate-x-1/2">
       <div
-        class="max-w-3xl mx-auto my-10 bg-white p-5 rounded-md shadow-sm dark:bg-[#080808] rounded-md">
+        class="max-w-3xl mx-auto my-10 bg-white p-5 rounded-md shadow-sm dark:bg-[#080808]">
         <div class="text-center">
           <h1
             class="my-3 text-3xl font-semibold text-gray-700 dark:text-gray-200">
             Trabaja con Nosotros
           </h1>
           <p class="text-gray-400 dark:text-gray-400">
-            Envíanos tu CV o datos de tu empresa y nos pondremos en contacto
-            contigo.
+            ¿Buscas trabajo o tienes un producto que podríamos necesitar?
+            Envíanos tu mensaje en el siguiente formulario.
           </p>
         </div>
         <div class="m-7">
@@ -26,6 +26,11 @@ import { Icon } from "astro-icon";
             action="https://api.web3forms.com/submit"
             method="POST"
             id="form">
+            <input
+              type="hidden"
+              name="from_name"
+              value="Trabaja con Nosotros"
+            />
             <input
               type="hidden"
               name="subject"
@@ -104,21 +109,6 @@ import { Icon } from "astro-icon";
                 />
               </div>
             </div>
-
-            <div class="mb-6">
-              <label
-                for="message"
-                class="block mb-2 text-sm text-gray-600 dark:text-gray-400"
-                >Subir documento (.pdf o .docx. Menos de 1 MB)</label
-              >
-              <input
-                type="file"
-                id="attachment"
-                name="attachment"
-                accept="application/pdf,.doc,.docx"
-                required
-              />
-            </div>
             <div class="mb-6">
               <button
                 type="submit"
@@ -143,15 +133,6 @@ import { Icon } from "astro-icon";
     const formData = new FormData(form);
     e.preventDefault();
     formData.append("apikey", import.meta.env.EMAIL_API_KEY);
-
-    const file = document.getElementById("attachment");
-    const filesize = file.files[0].size / 1024;
-
-    if (filesize > 1000) {
-      alert("Sube un archivo de menos de 1 MB");
-      return;
-    }
-
     result.innerHTML = "Enviando...";
 
     fetch("https://api.web3forms.com/submit", {

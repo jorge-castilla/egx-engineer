@@ -6,8 +6,8 @@ import PricingCard from "@components/pricing.astro";
 
 const pricing = [
   {
-    name: "Certificación",
-    price: "TC6",
+    category: "Certificación",
+    name: "TC6",
     popular: false,
     features: ["Normativas vigentes", "Certificación"],
     button: {
@@ -16,8 +16,8 @@ const pricing = [
     },
   },
   {
-    name: "Proyectos",
-    price: "Planimetrías",
+    category: "Proyectos",
+    name: "Planimetrías",
     popular: true,
     features: ["A todo Chile", "Planos", "Memoría de Cálculo", "EE.TT."],
     button: {
@@ -26,8 +26,38 @@ const pricing = [
     },
   },
   {
-    name: "Instalaciones",
-    price: "TE1",
+    category: "Instalaciones",
+    name: "TE1",
+    popular: false,
+    features: ["Estándares SEC", "Seguridad"],
+    button: {
+      text: "Ver Más",
+      link: "/contacto",
+    },
+  },
+  {
+    category: "",
+    name: "Contratista",
+    popular: false,
+    features: ["Estándares SEC", "Seguridad"],
+    button: {
+      text: "Ver Más",
+      link: "/contacto",
+    },
+  },
+  {
+    category: "Proyectos",
+    name: "Gestión Sello Verde",
+    popular: true,
+    features: ["Estándares SEC", "Seguridad"],
+    button: {
+      text: "Saber Más",
+      link: "/contacto",
+    },
+  },
+  {
+    category: "Instalaciones",
+    name: "Res. Sanitarias",
     popular: false,
     features: ["Estándares SEC", "Seguridad"],
     button: {
