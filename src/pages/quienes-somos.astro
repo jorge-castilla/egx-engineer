@@ -4,6 +4,7 @@ import { getCollection } from "astro:content";
 import Layout from "@layouts/Layout.astro";
 import Container from "@components/container.astro";
 import Sectionhead from "@components/sectionhead.astro";
+import { Image } from "astro:assets";
 
 // Filter team entries with 'draft: false' & date before current date
 const publishedTeamMembers = await getCollection("team", ({ data }) => {
@@ -12,41 +13,72 @@ const publishedTeamMembers = await getCollection("team", ({ data }) => {
 ---
 
 <Layout title="Quiénes somos">
-  <Container>
-    <div class="max-w-4xl mx-auto px-16 py-16 mb-8">
-      <h2 class="text-center pb-2">NUESTRA MISIÓN</h2>
-      <h1 class="text-center text-3xl pb-4 font-semibold">
-        Simplificar la certificación y concreción de tus Proyectos
-      </h1>
-      <p class="text-center text-xl">
-        Nuestro compromiso es asegurar soluciones eficientes, seguras y
-        adaptadas a las necesidades específicas de cada proyecto, garantizando
-        calidad y cumplimiento normativo.
-      </p>
-    </div>
+  <section
+    class="bg-center bg-cover bg-[url('/certification.jpg')] bg-gray-700 bg-blend-multiply py-48 relative mb-96">
     <div
-      class="bg-purple-50 mx-auto grid grid-cols-1 md:grid-cols-3 px-20 py-16 gap-6 rounded-md dark:border dark:bg-transparent dark:border-violet-950">
-      <div class="col-span-1">
-        <img
-          src="/talca.jpg"
-          alt="Talca"
-          class="aspect-square max-w-xs w-full h-full object-cover rounded"
-        />
-      </div>
-      <div class="col-span-2">
-        <h4 class="pb-2">NUESTRA VISIÓN</h4>
-        <h3 class="font-semibold text-2xl mb-4">
-          Ser Líderes en Proyectos de especialidad en La Región del Maule
-        </h3>
-        <p class="text-xl">
-          Aspiramos a ser reconocidos por combinar tecnología avanzada y un
-          servicio al cliente excepcional, estableciendo nuevos estándares en
-          sostenibilidad y seguridad. <br />
-           Nos enfocamos en desarrollar soluciones que no solo satisfagan, sino
-          que superen las expectativas de nuestros clientes, contribuyendo
-          significativamente al progreso y bienestar de nuestra comunidad.
+      class="container mx-auto absolute top-24 left-1/2 -translate-x-1/2 bg-white max-w-5xl">
+      <Sectionhead>
+        <Fragment slot="title">
+          <div class="flex justify-center items-center flex-col">
+            <Image
+              src="/logo.png"
+              alt="Logo EGX"
+              width="96"
+              height="96"
+              loading="eager"
+              format="avif"
+              class="mb-4"
+            />
+            <div>
+              <span class="text-purple-500">EGX</span> Ingeniería
+            </div>
+          </div>
+        </Fragment>
+        <Fragment slot="desc">
+          <div class="px-8">
+            Nuestra empresa está conformada por <span class="font-semibold"
+              >Ingenieros, Gásfiters, Electricistas y Dibujantes</span
+            >. Todo el equipo técnico posee certificación SEC, con sus licencias
+            profesionales correspondientes.
+          </div>
+        </Fragment>
+      </Sectionhead>
+      <div class="max-w-4xl mx-auto px-16 py-16 mb-8">
+        <h2 class="text-center pb-2">NUESTRA MISIÓN</h2>
+        <h1 class="text-center text-3xl pb-4 font-semibold">
+          Simplificar la certificación y concreción de tus Proyectos
+        </h1>
+        <p class="text-center text-xl">
+          Nuestro compromiso es asegurar soluciones eficientes, seguras y
+          adaptadas a las necesidades específicas de cada proyecto, garantizando
+          calidad y cumplimiento normativo.
         </p>
       </div>
+      <div
+        class="bg-purple-50 mx-auto grid grid-cols-1 md:grid-cols-3 px-20 py-16 gap-6 rounded-md dark:border dark:bg-transparent dark:border-violet-950">
+        <div class="col-span-1">
+          <img
+            src="/talca.jpg"
+            alt="Talca"
+            class="aspect-square max-w-xs w-full h-full object-cover rounded"
+          />
+        </div>
+        <div class="col-span-2">
+          <h4 class="pb-2">NUESTRA VISIÓN</h4>
+          <h3 class="font-semibold text-2xl mb-4">
+            Ser Líderes en Proyectos de especialidad en La Región del Maule
+          </h3>
+          <p class="text-xl">
+            Aspiramos a ser reconocidos por combinar tecnología avanzada y un
+            servicio al cliente excepcional, estableciendo nuevos estándares en
+            sostenibilidad y seguridad. <br />
+             Nos enfocamos en desarrollar soluciones que no solo satisfagan,
+            sino que superen las expectativas de nuestros clientes,
+            contribuyendo significativamente al progreso y bienestar de nuestra
+            comunidad.
+          </p>
+        </div>
+      </div>
     </div>
-  </Container>
+  </section>
 </Layout>
