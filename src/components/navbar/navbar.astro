@@ -44,7 +44,8 @@ const currentPath = pathname;
 <Container>
   <header class="flex flex-col lg:flex-row justify-between items-center my-5">
     <Astronav>
-      <div class="flex w-full lg:w-auto items-center justify-between">
+      <div
+        class="flex w-full lg:w-auto items-center justify-between group/logo">
         <a href="/" class="text-lg flex items-center gap-2">
           <div class="w-12">
             <Image
@@ -54,10 +55,17 @@ const currentPath = pathname;
               height="48"
               loading="eager"
               format="avif"
+              class={"filter transition-transform group-hover/logo:scale-105 duration-300"}
             />
           </div>
-          <span class="font-bold text-slate-800 dark:text-white">EGX</span>
-          <span class="text-slate-500 dark:text-gray-400">Ingeniería</span>
+          <span
+            class="font-bold text-slate-800 dark:text-white group-hover/logo:text-purple-500"
+            >EGX</span
+          >
+          <span
+            class="text-slate-500 dark:text-gray-400 group-hover/logo:text-slate-950"
+            >Ingeniería</span
+          >
         </a>
         <div class="block lg:hidden">
           <MenuIcon class="w-4 h-4 text-gray-800" />

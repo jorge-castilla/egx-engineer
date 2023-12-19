@@ -13,10 +13,12 @@ const publishedTeamMembers = await getCollection("team", ({ data }) => {
 ---
 
 <Layout title="Quiénes somos">
-  <section
-    class="bg-center bg-cover bg-[url('/certification.jpg')] bg-gray-700 bg-blend-multiply py-48 relative mb-96">
+  <section>
     <div
-      class="container mx-auto absolute top-24 left-1/2 -translate-x-1/2 bg-white max-w-5xl">
+      class="bg-center bg-cover bg-[url('/certification.jpg')] bg-gray-700 bg-blend-multiply h-96 py-48">
+    </div>
+
+    <div class="container mx-auto bg-white rounded-xl max-w-5xl -mt-64 pt-1">
       <Sectionhead>
         <Fragment slot="title">
           <div class="flex justify-center items-center flex-col">
@@ -35,7 +37,7 @@ const publishedTeamMembers = await getCollection("team", ({ data }) => {
           </div>
         </Fragment>
         <Fragment slot="desc">
-          <div class="px-8">
+          <div class="px-32 text-left text-xl">
             Nuestra empresa está conformada por <span class="font-semibold"
               >Ingenieros, Gásfiters, Electricistas y Dibujantes</span
             >. Todo el equipo técnico posee certificación SEC, con sus licencias
@@ -43,7 +45,7 @@ const publishedTeamMembers = await getCollection("team", ({ data }) => {
           </div>
         </Fragment>
       </Sectionhead>
-      <div class="max-w-4xl mx-auto px-16 py-16 mb-8">
+      <div class="max-w-4xl mx-auto px-16 py-16 my-16">
         <h2 class="text-center pb-2">NUESTRA MISIÓN</h2>
         <h1 class="text-center text-3xl pb-4 font-semibold">
           Simplificar la certificación y concreción de tus Proyectos
