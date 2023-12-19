@@ -31,7 +31,17 @@ const { plan } = Astro.props;
           ))
         }
       </ul>
-    </div><div class="flex mt-8">
+    </div>
+    <div>
+      {
+        plan.image && (
+          <div class="flex justify-center -mb-8">
+            <img src={plan.image.src} alt={plan.image.alt} class="w-48 m-4" />
+          </div>
+        )
+      }
+    </div>
+    <div class="flex mt-8">
       <Link
         href={plan.button.link || "#"}
         block
