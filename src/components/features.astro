@@ -41,7 +41,6 @@ const features = [
   },
 ];
 ---
-
 <div class="mt-16">
   <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">
     Servicios de Ingeniería
@@ -56,7 +55,7 @@ const features = [
 <div class="grid sm:grid-cols-2 md:grid-cols-3 mt-16 gap-16">
   {
     features.map((item) => (
-      <div class="group/item flex gap-4 items-start">
+      <div class="group/item flex gap-4 items-start not-visible transition duration-500">
         <div class="mt-1 bg-purple-950 rounded-full  p-2 w-10 h-10 shrink-0 group-hover/item:bg-amber-600 duration-200">
           <Icon class="text-white" name={item.icon} />
         </div>
@@ -68,3 +67,30 @@ const features = [
     ))
   }
 </div>
+<script defer>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("sure-visible");
+      } 
+    });
+  });
+
+  const hiddenElements = document.querySelectorAll(".not-visible");
+  console.log(hiddenElements);
+  hiddenElements.forEach((element) => {
+    console.log(element);
+    observer.observe(element);
+  });
+</script>
+
+<style scoped>
+  .not-visible {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  .sure-visible {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+</style>

@@ -1,7 +1,7 @@
 <section
   class="bg-center bg-no-repeat bg-[url('/hero.jpg')] bg-gray-700 bg-blend-multiply py-48">
   <div
-    class="px-4 mx-auto max-w-screen-xl text-center flex justify-center align-center flex-col">
+    class="px-4 mx-auto max-w-screen-xl text-center flex justify-center align-center flex-col text-container">
     <h1
       class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-white md:text-5xl lg:text-6xl">
       Proyectos de Especialidades
@@ -46,4 +46,18 @@
   </div>
 </section>
 
-<style scoped></style>
+<style scoped>
+  .text-container {
+    animation: 0.5s linear 0s normal firstLoad;
+  }
+  @keyframes firstLoad {
+    from {
+      opacity: 0;
+      transform: translateY(15px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+  }
+</style>
