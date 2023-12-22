@@ -3,9 +3,36 @@ import { Icon } from "astro-icon";
 ---
 
 <a
-  class="fixed bottom-10 right-10 p-4 bg-green-500 rounded-full hover:bg-green-400 transition"
+  class="fixed bottom-10 right-10 p-4 bg-green-500 rounded-full hover:bg-green-400 hover:scale-105 transition"
   href="https://wa.me/56932101930?text=Hola,%20me%20gustar%C3%ADa%20cotizar"
   target="_blank"
   aria-label="Escribe a nuestro whatsapp">
   <Icon class="text-white w-7 h-7" name="bi:whatsapp" />
 </a>
+
+<style>
+  /* animar icono cuando aparece */
+  a {
+    animation: 2s ease-out 0s 1 slideInFromRight;
+  }
+  @keyframes slideInFromRight {
+    0% {
+      opacity: 0;
+    }
+    70%{
+      opacity: 0;
+      right: -2.5rem;
+      bottom: -1rem;
+      scale: 0.3;
+    }
+    90%{
+      right: 2.5rem;
+      bottom: 2.5rem;
+      scale: 1.05;
+    }
+    100% {
+      scale: 1;
+      opacity: 1;
+    }
+  }
+</style>
