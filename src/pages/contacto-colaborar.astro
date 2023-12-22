@@ -29,12 +29,17 @@ import { Icon } from "astro-icon";
             <input
               type="hidden"
               name="from_name"
-              value="Trabaja con Nosotros"
+              value="EGX Ingeniería"
             />
+            <input
+            type="hidden"
+            name="access_key"
+            value={import.meta.env.EMAIL_API_KEY}
+          />
             <input
               type="hidden"
               name="subject"
-              value="New Submission from Web3Forms"
+              value="Solicitud de trabajo"
             />
             <input
               type="checkbox"
@@ -46,13 +51,13 @@ import { Icon } from "astro-icon";
             <div class="flex mb-6 space-x-4">
               <div class="w-full md:w-1/2">
                 <label
-                  for="fname"
+                  for="first_name"
                   class="block mb-2 text-sm text-gray-600 dark:text-gray-200"
                   >Nombre</label
                 >
                 <input
                   type="text"
-                  name="name"
+                  name="Nombre"
                   id="first_name"
                   placeholder="John"
                   required
@@ -61,14 +66,14 @@ import { Icon } from "astro-icon";
               </div>
               <div class="w-full md:w-1/2">
                 <label
-                  for="lname"
+                  for="empresa"
                   class="block mb-2 text-sm text-gray-600 dark:text-gray-400"
                   >Empresa</label
                 >
                 <input
                   type="text"
-                  name="last_name"
-                  id="lname"
+                  name="Empresa"
+                  id="empresa"
                   placeholder="Doe"
                   required
                   class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:text-black dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500"
@@ -101,7 +106,7 @@ import { Icon } from "astro-icon";
                 >
                 <input
                   type="text"
-                  name="phone"
+                  name="Telefono"
                   id="phone"
                   placeholder="+56 9 1234 5678"
                   required
@@ -116,10 +121,11 @@ import { Icon } from "astro-icon";
               >Mensaje</label
             >
               <textarea
-                name="message"
+                name="Mensaje"
                 required
                 placeholder="Tu mensaje"
                 rows="4"
+                id="message"
                 class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:text-black dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500"
               ></textarea>
             </div>
@@ -146,7 +152,6 @@ import { Icon } from "astro-icon";
   form.addEventListener("submit", function (e) {
     const formData = new FormData(form);
     e.preventDefault();
-    formData.append("apikey", import.meta.env.EMAIL_API_KEY);
     result.innerHTML = "Enviando...";
 
     fetch("https://api.web3forms.com/submit", {
