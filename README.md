@@ -1,7 +1,6 @@
 # EGX Ingeniería
 
-Sitio web de contacto para la empresa EGX Ingeniería realizado con Astro y Tailwind. 
-
+Sitio web de contacto para la empresa EGX Ingeniería realizado con Astro y Tailwind.
 
 ## Enlace a Producción
 
