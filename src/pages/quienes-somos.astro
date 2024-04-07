@@ -5,11 +5,7 @@ import Layout from "@layouts/Layout.astro";
 import Container from "@components/container.astro";
 import Sectionhead from "@components/sectionhead.astro";
 import { Image } from "astro:assets";
-
-// Filter team entries with 'draft: false' & date before current date
-const publishedTeamMembers = await getCollection("team", ({ data }) => {
-  return !data.draft && data.publishDate < new Date();
-});
+import { Icon } from "astro-icon";
 ---
 
 <Layout title="Quiénes somos">
@@ -17,11 +13,11 @@ const publishedTeamMembers = await getCollection("team", ({ data }) => {
     <div
       class="bg-center bg-cover bg-[url('/certification.jpg')] bg-gray-700 bg-blend-multiply h-96 py-48">
     </div>
-
-    <div class="container mx-auto bg-white rounded-xl max-w-5xl -mt-64 pt-1">
+    <div
+      class="container mx-auto bg-white rounded-xl max-w-5xl -mt-64 pt-1 px-2 md:px-8 lg:px-16">
       <Sectionhead>
         <Fragment slot="title">
-          <div class="flex justify-center items-center flex-col">
+          <div class="flex gap-4 items-center flex-col text-3xl lg:text-5xl">
             <Image
               src="/logo.png"
               alt="Logo EGX"
@@ -29,7 +25,6 @@ const publishedTeamMembers = await getCollection("team", ({ data }) => {
               height="96"
               loading="eager"
               format="avif"
-              class="mb-4"
             />
             <div>
               <span class="text-purple-500">EGX</span> Ingeniería
@@ -37,7 +32,7 @@ const publishedTeamMembers = await getCollection("team", ({ data }) => {
           </div>
         </Fragment>
         <Fragment slot="desc">
-          <div class="px-32 text-left text-xl">
+          <div class="text-left text-xl md:text-2xl">
             Nuestra empresa está conformada por <span class="font-semibold"
               >Ingenieros, Gásfiters, Electricistas y Dibujantes</span
             >. Todo el equipo técnico posee certificación SEC, con sus licencias
@@ -45,41 +40,39 @@ const publishedTeamMembers = await getCollection("team", ({ data }) => {
           </div>
         </Fragment>
       </Sectionhead>
-      <div class="max-w-4xl mx-auto px-16 py-16 my-16">
-        <h2 class="text-center pb-2">NUESTRA MISIÓN</h2>
-        <h1 class="text-center text-3xl pb-4 font-semibold">
-          Simplificar la certificación y concreción de tus Proyectos
-        </h1>
-        <p class="text-center text-xl">
-          Nuestro compromiso es asegurar soluciones eficientes, seguras y
-          adaptadas a las necesidades específicas de cada proyecto, garantizando
-          calidad y cumplimiento normativo.
+      <div class="mb-8 mt-10 ml-4">
+        <h2
+          class="flex items-center gap-2 text-purple-900 text-lg md:text-2xl font-bold">
+          <div class="bg-purple-300 rounded-sm w-5 md:w-6 h-5 md:h-6">
+            <Icon class="w-full" name="ic:twotone-arrow-right" />
+          </div>
+          MISIÓN
+        </h2>
+        <p class="lg:text-xl px-2">
+          <span class="font-bold">
+            Nuestro compromiso simplificar la certificación y concreción de tus
+            proyectos,
+          </span> asegurando soluciones eficientes, seguras y adaptadas a las necesidades
+          específicas de cada proyecto, garantizando calidad y cumplimiento normativo.
         </p>
       </div>
-      <div
-        class="bg-purple-50 mx-auto grid grid-cols-1 md:grid-cols-3 px-20 py-16 gap-6 rounded-md dark:border dark:bg-transparent dark:border-violet-950">
-        <div class="col-span-1">
-          <img
-            src="/talca.jpg"
-            alt="Talca"
-            class="aspect-square max-w-xs w-full h-full object-cover rounded"
-          />
-        </div>
-        <div class="col-span-2">
-          <h4 class="pb-2">NUESTRA VISIÓN</h4>
-          <h3 class="font-semibold text-2xl mb-4">
-            Ser Líderes en Proyectos de especialidad en La Región del Maule
-          </h3>
-          <p class="text-xl">
-            Aspiramos a ser reconocidos por combinar tecnología avanzada y un
-            servicio al cliente excepcional, estableciendo nuevos estándares en
-            sostenibilidad y seguridad. <br />
-             Nos enfocamos en desarrollar soluciones que no solo satisfagan,
-            sino que superen las expectativas de nuestros clientes,
-            contribuyendo significativamente al progreso y bienestar de nuestra
-            comunidad.
-          </p>
-        </div>
+      <div class="ml-4">
+        <h2
+          class="flex items-center gap-2 text-purple-900 text-lg md:text-2xl font-bold">
+          <div class="bg-purple-300 rounded-sm w-5 md:w-6 h-5 md:h-6">
+            <Icon class="w-full" name="ic:twotone-arrow-right" />
+          </div>
+          VISIÓN
+        </h2>
+        <p class="md:text-xl px-2">
+          <span class="font-bold">
+            Aspiramos a Ser Líderes en Proyectos de especialidad en La Región
+            del Maule
+          </span>
+          siendo reconocidos por combinar tecnología avanzada y un servicio al cliente
+          excepcional, estableciendo nuevos estándares en sostenibilidad y seguridad.
+        </p>
+        <div></div>
       </div>
     </div>
   </section>
