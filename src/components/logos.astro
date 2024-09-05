@@ -2,9 +2,10 @@
 import { Image } from "astro:assets";
 import nehuenLogo from "@assets/logos/nehuen-logo.png";
 import canelosLogo from "@assets/logos/4canelos-logo.png";
+import napaguaLogo from "@assets/logos/napagua-logo.jpeg";
 ---
 
-<div class="">
+<div>
   <div
     class="flex gap-20 md:gap-32 items-center justify-center mt-10 flex-wrap">
     <Image
@@ -19,9 +20,11 @@ import canelosLogo from "@assets/logos/4canelos-logo.png";
       width={96}
       class="filter grayscale hover:filter-none transition-all duration-500 ease-in-out"
     />
-    <div
-      class="text-xl hover:text-green-700 transition-all duration-500 ease-in-out">
-      <span class="font-bold">Licancabur</span> SpA
-    </div>
+    <Image
+      src={napaguaLogo}
+      alt="Empresa Napagua"
+      width={96}
+      class="filter grayscale hover:filter-none transition-all duration-500 ease-in-out"
+    />
   </div>
 </div>
