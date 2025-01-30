@@ -24,6 +24,20 @@ const makeTitle = title ? title + " | " + "EGX" : "EGX Ingeniería ";
 <!doctype html>
 <html lang="es">
   <head>
+    <!-- Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-KNHG53KX");
+    </script>
+    <!-- End Google Tag Manager -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
@@ -31,46 +45,42 @@ const makeTitle = title ? title + " | " + "EGX" : "EGX Ingeniería ";
     <link rel="preload" as="image" href="/logo.png" />
     <link rel="css" href="@fontsource-variable/inter/index.css" />
     <meta name="generator" content={Astro.generator} />
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-E7Y36BHW96"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-
-      gtag("config", "G-E7Y36BHW96");
-    </script>
-
-    <!-- 
-    <link rel="preload" as="image" href={src} alt="Hero" /> -->
-    <SEO
-      title={makeTitle}
-      description="EGX Ingeniería ofrece servicios de instalaciones de gas, electricidad y sanitarias"
-      nofollow={false}
-      noindex={false}
-      canonical={canonicalURL}
-      openGraph={{
-        basic: {
-          url: canonicalURL,
-          type: "website",
-          title: `EGX - Ingeniería`,
-          image: resolvedImageWithDomain,
-        },
-        image: {
-          alt: "EGX Homepage Screenshot",
-        },
-      }}
-      twitter={{
-        creator: "@egxingenieria",
-        site: "@egxingenieria",
-        card: "summary_large_image",
-      }}
-    />
   </head>
+
+  <SEO
+    title={makeTitle}
+    description="EGX Ingeniería ofrece servicios de instalaciones de gas, electricidad y sanitarias"
+    nofollow={false}
+    noindex={false}
+    canonical={canonicalURL}
+    openGraph={{
+      basic: {
+        url: canonicalURL,
+        type: "website",
+        title: `EGX - Ingeniería`,
+        image: resolvedImageWithDomain,
+      },
+      image: {
+        alt: "EGX Homepage Screenshot",
+      },
+    }}
+    twitter={{
+      creator: "@egxingenieria",
+      site: "@egxingenieria",
+      card: "summary_large_image",
+    }}
+  />
+
   <body class="selection:bg-purple-600 selection:text-fuchsia-50">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-KNHG53KX"
+        height="0"
+        width="0"
+        style="display:none;visibility:hidden"></iframe></noscript
+    >
+    <!-- End Google Tag Manager (noscript) -->
     <div
       class="bg-purple-800 text-center text-white py-1 text-sm flex justify-center items-center gap-3 flex-col md:flex-row">
       <div>Trabajamos desde Santiago a Chillán</div>
@@ -86,4 +96,5 @@ const makeTitle = title ? title + " | " + "EGX" : "EGX Ingeniería ";
       }
     </style>
   </body>
+
 </html>
