@@ -22,7 +22,7 @@ const makeTitle = title ? title + " | " + "EGX" : "EGX Ingeniería ";
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
@@ -49,6 +49,8 @@ const makeTitle = title ? title + " | " + "EGX" : "EGX Ingeniería ";
     <SEO
       title={makeTitle}
       description="EGX Ingeniería ofrece servicios de instalaciones de gas, electricidad y sanitarias"
+      nofollow={false}
+      noindex={false}
       canonical={canonicalURL}
       openGraph={{
         basic: {
@@ -71,7 +73,7 @@ const makeTitle = title ? title + " | " + "EGX" : "EGX Ingeniería ";
   <body class="selection:bg-purple-600 selection:text-fuchsia-50">
     <div
       class="bg-purple-800 text-center text-white py-1 text-sm flex justify-center items-center gap-3 flex-col md:flex-row">
-      <div>Servicios presenciales: Desde Santiago a Chillán</div>
+      <div>Trabajamos desde Santiago a Chillán</div>
       <div class="hidden md:block">|</div>
       <div>Diseño de proyectos: a todo Chile</div>
     </div>
